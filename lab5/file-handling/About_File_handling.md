@@ -40,3 +40,36 @@ public class CopyFile {
    }
 }
 ```
+### OutputStream vs InputStream
+#### OutputStream
+Java application uses an output stream to write data to a destination; it may be a file, an array, peripheral device or socket.
+
+#### InputStream
+Java application uses an input stream to read data from a source; it may be a file, an array, peripheral device or socket.
+
+## Java BufferedOutputStream Class
+Java BufferedOutputStream class is used for buffering an output stream. It internally uses buffer to store data. It adds more efficiency than to write data directly into a stream. So, it makes the performance fast.
+
+For adding the buffer in an OutputStream, use the BufferedOutputStream class. Let's see the syntax for adding the buffer in an OutputStream:
+```
+OutputStream os= new BufferedOutputStream(new FileOutputStream("D:\\IO Package\\testout.txt"));  
+```
+### Example of BufferedOutputStream class:
+```
+package com.javatpoint;  
+import java.io.*;  
+public class BufferedOutputStreamExample{    
+public static void main(String args[])throws Exception{    
+     FileOutputStream fout=new FileOutputStream("D:\\testout.txt");    
+     BufferedOutputStream bout=new BufferedOutputStream(fout);    
+     String s="Welcome to javaTpoint.";    
+     byte b[]=s.getBytes();    
+     bout.write(b);    
+     bout.flush();    
+     bout.close();    
+     fout.close();    
+     System.out.println("success");    
+}    
+}  
+
+```
