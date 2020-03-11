@@ -73,3 +73,45 @@ public static void main(String args[])throws Exception{
 }  
 
 ```
+
+### Java BufferedInputStream Class
+Java BufferedInputStream class is used to read information from stream. It internally uses buffer mechanism to make the performance fast.
+
+The important points about BufferedInputStream are:
+
+1.When the bytes from the stream are skipped or read, the internal buffer automatically refilled from the contained input stream, many bytes at a time.
+2.When a BufferedInputStream is created, an internal buffer array is created.
+
+### Java BufferedInputStream class declaration
+```
+public class BufferedInputStream extends FilterInputStream  
+```
+### Java BufferedInputStream class constructors
+```
+
+Constructor	Description
+BufferedInputStream(InputStream IS)	It creates the BufferedInputStream and saves it argument, the input stream IS, for later use.
+BufferedInputStream(InputStream IS, int size)	It creates the BufferedInputStream with a specified buffer size and saves it argument, the input stream IS, for later use.
+```
+### Example of Java BufferedInputStream
+
+```
+package com.javatpoint;  
+   
+import java.io.*;  
+public class BufferedInputStreamExample{    
+ public static void main(String args[]){    
+  try{    
+    FileInputStream fin=new FileInputStream("D:\\testout.txt");    
+    BufferedInputStream bin=new BufferedInputStream(fin);    
+    int i;    
+    while((i=bin.read())!=-1){    
+     System.out.print((char)i);    
+    }    
+    bin.close();    
+    fin.close();    
+  }catch(Exception e){System.out.println(e);}    
+ }    
+}  
+```
+
